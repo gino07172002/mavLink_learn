@@ -1,0 +1,76 @@
+{
+  "scenario": "normal",
+  "passed": true,
+  "px4_binary": "/home/gino/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+  "environment": {
+    "PX4_SIM_MODEL": "sihsim_quadx",
+    "PX4_SYS_AUTOSTART": "10040",
+    "PX4_SIM_SPEED_FACTOR": "1"
+  },
+  "instance": 7,
+  "runtime_directory_was_temporary": true,
+  "clients": [
+    {
+      "command": [
+        "/mnt/d/mavLink_learn/build-linux/lab01_telemetry",
+        "14650",
+        "127.0.0.1",
+        "14660",
+        "8"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "required_output": [
+        "HEARTBEAT",
+        "ATTITUDE",
+        "SUMMARY"
+      ]
+    },
+    {
+      "command": [
+        "/mnt/d/mavLink_learn/build-linux/lab02_command",
+        "arm",
+        "14650",
+        "127.0.0.1",
+        "14660"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "required_output": [
+        "ACK ACCEPTED",
+        "STATE_CONFIRMED armed=1"
+      ]
+    },
+    {
+      "command": [
+        "/mnt/d/mavLink_learn/build-linux/lab02_command",
+        "disarm",
+        "14650",
+        "127.0.0.1",
+        "14660"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "required_output": [
+        "STATE_CONFIRMED armed=0"
+      ]
+    },
+    {
+      "command": [
+        "/mnt/d/mavLink_learn/build-linux/lab05_sitl",
+        "--sitl",
+        "14650",
+        "127.0.0.1",
+        "14660",
+        "20"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "required_output": [
+        "SITL_PASS",
+        "LANDED_CONFIRMED",
+        "DISARM_CONFIRMED"
+      ]
+    }
+  ]
+}

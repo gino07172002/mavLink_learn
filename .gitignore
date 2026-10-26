@@ -1,0 +1,8 @@
+build*/
+__pycache__/
+practice_backups/
+*.py[cod]
+/.vs/
+/out/
+.DS_Store
+Thumbs.db

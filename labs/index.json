@@ -1,0 +1,62 @@
+[
+  {
+    "number": "00",
+    "folder": "lab00_protocol",
+    "title": "封包與協定檢查",
+    "target": "protocol_tests"
+  },
+  {
+    "number": "01",
+    "folder": "lab01_telemetry",
+    "title": "遙測與 QGroundControl",
+    "target": "lab01_telemetry"
+  },
+  {
+    "number": "02",
+    "folder": "lab02_command",
+    "title": "命令、ACK 與重送",
+    "target": "lab02_command"
+  },
+  {
+    "number": "03",
+    "folder": "lab03_offboard",
+    "title": "最小模型 Offboard",
+    "target": "lab03_offboard"
+  },
+  {
+    "number": "04",
+    "folder": "lab04_bridge",
+    "title": "MAVLink Bridge 與 Commander",
+    "target": "lab04_bridge"
+  },
+  {
+    "number": "05",
+    "folder": "lab05_sitl",
+    "title": "真正 PX4 SIH",
+    "target": "lab05_sitl"
+  },
+  {
+    "number": "06",
+    "folder": "lab06_px4lite",
+    "title": "原有 PX4-Lite 整合",
+    "target": "lab06_px4lite"
+  },
+  {
+    "number": "07",
+    "folder": "lab07_services",
+    "title": "參數、TIMESYNC 與 Mission",
+    "target": "lab07_services"
+  },
+  {
+    "number": "08",
+    "folder": "lab08_router",
+    "title": "雙 client 訊息轉送",
+    "target": "lab08_router"
+  },
+  {
+    "number": "09",
+    "folder": "lab09_signing",
+    "title": "簽章與重播防護",
+    "target": "signing_tests"
+  }
+]

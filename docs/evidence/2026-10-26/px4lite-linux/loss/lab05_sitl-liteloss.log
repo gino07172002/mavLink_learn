@@ -1,0 +1,21 @@
+COMMAND id=511 attempt=1
+ACK ACCEPTED result=0 progress=0 detail=0
+COMMAND id=511 attempt=1
+ACK ACCEPTED result=0 progress=0 detail=0
+COMMAND id=176 attempt=1
+ACK ACCEPTED result=0 progress=0 detail=0
+OFFBOARD_CONFIRMED
+COMMAND id=400 attempt=1
+ACK ACCEPTED result=0 progress=0 detail=0
+ARM_CONFIRMED
+TRACK TAKEOFF x=0 y=0 z=-0.0417861 error=1.95821
+TRACK TAKEOFF x=0 y=0 z=-1.48632 error=0.513684
+TRACK TAKEOFF x=0 y=0 z=-2.09568 error=0.0956807
+REACHED TAKEOFF
+STOP_SETPOINTS heartbeat_continues=1
+OFFBOARD_LOSS_CONFIRMED custom_mode=100925440
+LANDED_CONFIRMED
+COMMAND id=400 attempt=1
+ACK ACCEPTED result=0 progress=0 detail=0
+DISARM_CONFIRMED
+PX4LITE_PASS scenario=offboard-loss

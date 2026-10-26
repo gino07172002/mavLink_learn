@@ -1,0 +1,4 @@
+COMMAND id=400 attempt=1
+ACK ACCEPTED result=0 progress=0 detail=0
+STATUSTEXT severity=6 Armed by external command	
+STATE_CONFIRMED armed=1

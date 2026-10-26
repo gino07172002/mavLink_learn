@@ -1,0 +1,30 @@
+COMMAND id=511 attempt=1
+ACK ACCEPTED result=0 progress=0 detail=0
+COMMAND id=511 attempt=1
+ACK ACCEPTED result=0 progress=0 detail=0
+COMMAND id=176 attempt=1
+ACK ACCEPTED result=0 progress=0 detail=0
+OFFBOARD_CONFIRMED
+COMMAND id=400 attempt=1
+ACK ACCEPTED result=0 progress=0 detail=0
+STATUSTEXT severity=6 Armed by external command	
+ARM_CONFIRMED
+TRACK TAKEOFF x=0.0106149 y=-0.0469618 z=0.0243225 error=1.99905
+STATUSTEXT severity=6 Takeoff detected	
+TRACK TAKEOFF x=-0.00562589 y=-0.0616886 z=0.0270081 error=2.00184
+TRACK TAKEOFF x=-0.0275025 y=-0.0740452 z=0.0326233 error=2.00775
+TRACK TAKEOFF x=-0.0173085 y=-0.019061 z=-0.452789 error=1.52146
+TRACK TAKEOFF x=-0.00971497 y=0.0394896 z=-1.25748 error=0.718899
+TRACK TAKEOFF x=-0.0111223 y=0.0127718 z=-1.60376 error=0.371615
+TRACK TAKEOFF x=-0.0108395 y=0.0122164 z=-1.79504 error=0.181457
+REACHED TAKEOFF
+STOP_SETPOINTS heartbeat_continues=1
+STATUSTEXT severity=2 Failsafe activated	
+OFFBOARD_LOSS_CONFIRMED custom_mode=100925440
+STATUSTEXT severity=6 Landing detected	
+LANDED_CONFIRMED
+COMMAND id=400 attempt=1
+ACK ACCEPTED result=0 progress=0 detail=0
+STATUSTEXT severity=6 Disarmed by external command	
+DISARM_CONFIRMED
+SITL_PASS scenario=offboard-loss

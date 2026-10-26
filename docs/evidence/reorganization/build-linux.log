@@ -1,0 +1,34 @@
+[  4%] Building CXX object labs/lab04_bridge/CMakeFiles/lab04_bridge.dir/src/main.cpp.o
+[  8%] Linking CXX executable ../../lab04_bridge
+[  8%] Built target lab04_bridge
+[ 13%] Building CXX object labs/lab00_protocol/CMakeFiles/protocol_tests.dir/src/main.cpp.o
+[ 17%] Linking CXX executable ../../protocol_tests
+[ 17%] Built target protocol_tests
+[ 21%] Building CXX object labs/lab01_telemetry/CMakeFiles/lab01_telemetry.dir/src/main.cpp.o
+[ 26%] Linking CXX executable ../../lab01_telemetry
+[ 26%] Built target lab01_telemetry
+[ 30%] Building CXX object labs/lab02_command/CMakeFiles/lab02_command.dir/src/main.cpp.o
+[ 34%] Linking CXX executable ../../lab02_command
+[ 34%] Built target lab02_command
+[ 39%] Building CXX object labs/lab03_offboard/CMakeFiles/lab03_offboard.dir/src/main.cpp.o
+[ 43%] Linking CXX executable ../../lab03_offboard
+[ 43%] Built target lab03_offboard
+[ 47%] Building CXX object labs/lab05_sitl/CMakeFiles/lab05_sitl.dir/src/main.cpp.o
+[ 52%] Linking CXX executable ../../lab05_sitl
+[ 52%] Built target lab05_sitl
+[ 56%] Building CXX object labs/lab06_px4lite/CMakeFiles/px4lite_backend.dir/mnt/d/px4-lite_learning/lab07/commander.cpp.o
+[ 60%] Building CXX object labs/lab06_px4lite/CMakeFiles/px4lite_backend.dir/mnt/d/px4-lite_learning/simulator/src/simple_quad_simulator.cpp.o
+[ 65%] Linking CXX static library libpx4lite_backend.a
+[ 65%] Built target px4lite_backend
+[ 69%] Building CXX object labs/lab06_px4lite/CMakeFiles/lab06_px4lite.dir/src/main.cpp.o
+[ 73%] Linking CXX executable ../../lab06_px4lite
+[ 73%] Built target lab06_px4lite
+[ 78%] Building CXX object labs/lab07_services/CMakeFiles/lab07_services.dir/src/main.cpp.o
+[ 82%] Linking CXX executable ../../lab07_services
+[ 82%] Built target lab07_services
+[ 86%] Building CXX object labs/lab08_router/CMakeFiles/lab08_router.dir/src/main.cpp.o
+[ 91%] Linking CXX executable ../../lab08_router
+[ 91%] Built target lab08_router
+[ 95%] Building CXX object labs/lab09_signing/CMakeFiles/signing_tests.dir/src/main.cpp.o
+[100%] Linking CXX executable ../../signing_tests
+[100%] Built target signing_tests

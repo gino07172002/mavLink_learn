@@ -1,0 +1,2 @@
+BRIDGE_READY port=53762 mode=normal
+VEHICLE_COMMAND id=400 confirmation=0

@@ -1,0 +1,3 @@
+COMMAND id=400 attempt=1
+ACK ACCEPTED result=0 progress=0 detail=0
+STATE_CONFIRMED armed=0

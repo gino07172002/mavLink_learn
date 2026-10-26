@@ -1,0 +1,5 @@
+add_library(lab04_model INTERFACE)
+target_include_directories(lab04_model INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/include")
+target_link_libraries(lab04_model INTERFACE lab_support)
+add_executable(lab04_bridge src/main.cpp)
+target_link_libraries(lab04_bridge PRIVATE lab04_model)

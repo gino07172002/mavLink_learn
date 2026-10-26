@@ -1,0 +1,5 @@
+{
+  "src/main.cpp": "76073a4d510c1a70639df1af407a59e3b89b1d8dcc9c5c9bfe78fbda0b1ad53b",
+  "tests/sitl_runner.py": "5d0e9b79411a08cbc8ea2b0447c71a3559392853285435c0daf0b049daf4a3ca",
+  "CMakeLists.txt": "6a10a01b99d595c8b902ecc2c74d49c34d87a506f194a395f38c22ed99121787"
+}

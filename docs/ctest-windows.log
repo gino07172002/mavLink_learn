@@ -1,0 +1,71 @@
+Start testing: Oct 26 17:02 ‘ä–k•W€ŠÔ
+----------------------------------------------------------
+1/2 Testing: protocol
+1/2 Test: protocol
+Command: "D:/mavLink_learn/build/protocol_tests.exe"
+Directory: D:/mavLink_learn/build
+"protocol" start time: Oct 26 17:02 ‘ä–k•W€ŠÔ
+Output:
+----------------------------------------------------------
+PASS MAVLink 2 magic
+PASS partial header emits no message
+PASS split frame decoded
+PASS two frames in one datagram
+PASS bad CRC rejected
+PASS resynchronizes after corruption and noise
+PASS parser instances do not share partial state
+PASS ACK without extension targets accepted
+PASS ACK addressed to another client rejected
+PASS ACK matching client accepted
+PASS ACK from another vehicle rejected
+PASS ACK from another component rejected
+PASS ACK for another command rejected
+PASS position+yaw mask is 2552
+PASS Offboard rejected without prestream
+PASS unsupported frame rejected
+PASS unsupported mask rejected
+PASS NaN setpoint rejected
+PASS Offboard accepted after prestream
+PASS Commander arms
+PASS repeated arm is idempotent
+PASS NED kinematic response
+PASS no premature failsafe
+PASS setpoint loss leaves Offboard
+PASS arm denial reported
+PASS unknown command unsupported
+CHECKS=26
+<end of output>
+Test time =   0.15 sec
+----------------------------------------------------------
+Test Passed.
+"protocol" end time: Oct 26 17:02 ‘ä–k•W€ŠÔ
+"protocol" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: udp_integration
+2/2 Test: udp_integration
+Command: "C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0/python3.13.exe" "D:/mavLink_learn/tests/integration.py" "D:/mavLink_learn/build"
+Directory: D:/mavLink_learn/build
+"udp_integration" start time: Oct 26 17:02 ‘ä–k•W€ŠÔ
+Output:
+----------------------------------------------------------
+PASS Lab01 real UDP heartbeat and attitude
+PASS Lab01 heartbeat timeout after bridge exits
+PASS Lab02 arm/disarm ACK and observed state
+PASS Lab02 deny
+PASS Lab02 drop-first
+PASS Lab02 silent-ack
+PASS Lab02 no-state
+PASS Lab02 progress
+PASS Lab02 spoof
+PASS Lab03 prestream, mode, arm, position, stream loss, disarm
+SCENARIOS=10
+<end of output>
+Test time =  21.38 sec
+----------------------------------------------------------
+Test Passed.
+"udp_integration" end time: Oct 26 17:03 ‘ä–k•W€ŠÔ
+"udp_integration" time elapsed: 00:00:21
+----------------------------------------------------------
+
+End testing: Oct 26 17:03 ‘ä–k•W€ŠÔ

@@ -1,0 +1,321 @@
+以你目前的 PX4-Lite、uORB、WorkQueue、Commander State Machine、飛控模擬器學習進度，我認為 MAVLink 應該是下一個重要的學習主題。
+
+不過，你不需要把整套 MAVLink 規格讀完。對想走 PX4 SDK／無人機系統整合工程師的人來說，最重要的是學會三件事：
+
+1. 理解 MAVLink 協定：無人機與地面站、外部電腦怎麼溝通。
+2. 理解 MAVLink 與 PX4 的整合：外部命令如何進入 uORB、Commander，又如何把飛行狀態傳出去。
+3. 實作 MAVLink Client：自己用 C++ 寫程式，讀取無人機資料、發送命令、處理 ACK 與斷線。
+
+## 一、先搞清楚 MAVLink 在 PX4 裡面做什麼
+
+你可以把 MAVLink 想成無人機世界的通訊協定，某種程度上類似你熟悉的 Modbus，但它支援的通訊模式和功能豐富得多。
+
+簡化的 PX4 MAVLink 架構。實際上資料是雙向流動，並不是所有訊息都必須經過 Commander。
+
+例如，你在 QGroundControl 按下 Arm：
+
+`QGC → MAVLink COMMAND_LONG → PX4 MAVLink Receiver → uORB vehicle_command → Commander`
+
+Commander 檢查狀態之後，再經由回覆路徑送出 `COMMAND_ACK`。
+
+反方向則是：
+
+`IMU / Estimator → uORB → MAVLink Stream → QGC`
+
+你之前寫過 Pub/Sub 和 Commander，所以現在最值得學習的是如何把這些模組接上外部通訊。
+
+[image](https://www.google.com/s2/favicons?domain=https://docs.px4.io\&sz=32)
+
+PX4 Guide (main)
+
++2
+
+
+
+## 二、MAVLink 學習順序
+
+我建議分成六個階段，前四個必學，後兩個偏向實際飛控系統整合。
+
+| 順序 | 主題                  | 要學的內容                                        | 優先度 |
+| -- | ------------------- | -------------------------------------------- | --- |
+| 1  | MAVLink Protocol    | Packet、Message ID、System ID、Component ID、CRC | 必學  |
+| 2  | Messages & Commands | HEARTBEAT、COMMAND_LONG、COMMAND_ACK、Telemetry | 必學  |
+| 3  | C++ 通訊實作            | UDP、序列化、解析、收發、timeout                        | 必學  |
+| 4  | PX4 MAVLink Module  | MAVLink Receiver、Stream、uORB、Commander       | 必學  |
+| 5  | Offboard Control    | Setpoint、座標系、控制頻率、Failsafe                   | 重要  |
+| 6  | 進階通訊                | Parameters、Mission、Routing、Signing           | 後續  |
+
+## 三、各個階段要真正搞懂什麼？
+
+### Stage 1 — MAVLink 協定本身
+
+首先認識 MAVLink 2 Packet。
+
+MAVLink 2 Packet 結構（非等比例）
+
+Magic
+
+0xFD
+
+Length
+
+1 byte
+
+Flags
+
+2 bytes
+
+Sequence
+
+1 byte
+
+System ID
+
+1 byte
+
+Component ID
+
+1 byte
+
+Message ID
+
+3 bytes
+
+Payload
+
+0–255 B
+
+Checksum · 2 B
+
+Signature · 13 B（可選）
+
+實際欄位依序排列。MAVLink 2 有固定標頭、可變 Payload，並可附加簽章。
+
+這階段你需要弄懂：
+
+System ID / Component ID：分辨是哪台無人機、哪個組件送出的資料。它們不是 UDP Port，也不代表網路 IP。
+
+Message ID：表示封包內容是哪一種 MAVLink Message，例如 HEARTBEAT、ATTITUDE。
+
+Sequence：協助判斷封包遺失或順序變化。
+
+CRC / CRC_EXTRA：確認封包完整性，以及雙方的訊息定義是否相容。
+
+Dialect：例如 `common.xml`，定義有哪些 Message、Enum、Command。這些定義可以用工具生成 C/C++ 程式碼。
+
+你以前做過 Modbus RTU 的 CRC 和封包解析，這部分應該相對容易。不需要自己重新實作 MAVLink CRC，先理解它的作用即可。
+
+[image](https://www.google.com/s2/favicons?domain=https://mavlink.io\&sz=32)
+
+MAVLink Guide
+
++1
+
+
+
+參考：[MAVLink Packet Serialization](https://mavlink.io/en/guide/serialization.html?utm_source=chatgpt.com)
+
+### Stage 2 — Messages、Commands、Microservices
+
+這個階段是核心。MAVLink 的 Message 不全部都是「命令」。
+
+| 訊息                              | 用途                   |
+| ------------------------------- | -------------------- |
+| `HEARTBEAT`                     | 宣告系統存在、種類、模式與部分狀態    |
+| `ATTITUDE`                      | Roll、Pitch、Yaw 等姿態資訊 |
+| `LOCAL_POSITION_NED`            | 本地座標系位置與速度           |
+| `GLOBAL_POSITION_INT`           | 全球座標位置               |
+| `SYS_STATUS`                    | 系統健康、電池等資訊           |
+| `STATUSTEXT`                    | 系統文字訊息               |
+| `COMMAND_LONG`                  | 發送具有參數的命令            |
+| `COMMAND_ACK`                   | 回報命令接收與執行結果          |
+| `SET_POSITION_TARGET_LOCAL_NED` | 提供位置／速度／加速度 Setpoint |
+
+注意 COMMAND_LONG 並不等於 Arm 命令。
+
+它是一個通用的命令容器，內部 `command` 欄位才指定要做的事情，例如 `MAV_CMD_COMPONENT_ARM_DISARM`。
+
+而 MAVLink 的 Command Protocol 有 ACK 和必要的重送機制。相較之下，ATTITUDE 這類持續更新的 Telemetry 通常不要求每個封包都被確認。
+
+[image](https://www.google.com/s2/favicons?domain=https://mavlink.io\&sz=32)
+
+MAVLink Guide
+
++1
+
+
+
+這裡最值得理解的概念，就是不同類型的資料，需要不同的可靠性策略。
+
+### Stage 3 — C++ 收發 MAVLink
+
+這個階段我建議你先不用 MAVSDK，直接使用 MAVLink 提供的 generated C headers，加上 Linux UDP Socket。
+
+你已經熟悉 Linux Socket、C++ 和網路通訊，實作起來不需要另學太多。
+
+接收流程大致如此：
+
+```
+mavlink_message_t msg;
+mavlink_status_t status{};
+
+for (int i = 0; i < received_size; ++i) {
+    if (mavlink_parse_char(
+            MAVLINK_COMM_0,
+            buffer[i],
+            &msg,
+            &status)) {
+
+        if (msg.msgid == MAVLINK_MSG_ID_HEARTBEAT) {
+            mavlink_heartbeat_t heartbeat{};
+            mavlink_msg_heartbeat_decode(&msg, &heartbeat);
+
+            // 處理 heartbeat
+        }
+    }
+}
+```
+
+發送端則會使用 `mavlink_msg_*_pack()` 建構 Message，然後透過 `mavlink_msg_to_send_buffer()` 轉成位元組，再交給 UDP Socket 發送。
+
+[image](https://www.google.com/s2/favicons?domain=https://mavlink.io\&sz=32)
+
+MAVLink Guide
+
++1
+
+
+
+此階段驗收標準是：自己的 C++ 程式可以連線 PX4 SITL，識別無人機、接收姿態、發送命令並取得 ACK。
+
+### Stage 4 — 閱讀 PX4 MAVLink Source Code
+
+這對你非常重要，而且要配合之前學的 uORB 一起看。
+
+我建議依以下順序閱讀：
+
+① [mavlink_receiver.cpp](https://github.com/PX4/PX4-Autopilot/blob/main/src/modules/mavlink/mavlink_receiver.cpp?utm_source=chatgpt.com)
+
+先找 `handle_message()`、`handle_message_command_long()` 和 `handle_message_set_position_target_local_ned()`。
+
+看 MAVLink Message 如何解碼、分派、轉換成 uORB Topic。
+
+② [mavlink_messages.cpp](https://github.com/PX4/PX4-Autopilot/blob/main/src/modules/mavlink/mavlink_messages.cpp?utm_source=chatgpt.com)
+
+研究 Stream List，配合各個 `MavlinkStream` 類別，理解如何訂閱 uORB 並將資料送出。
+
+你會看到之前寫的 Subscription 概念。
+
+③ [mavlink_main.cpp](https://github.com/PX4/PX4-Autopilot/blob/main/src/modules/mavlink/mavlink_main.cpp?utm_source=chatgpt.com)
+
+最後才看 MAVLink Module 如何啟動、管理 UDP/UART、設定頻率與傳輸通道。
+
+這個檔案很長，不需要從第一行讀到最後一行。
+
+上述連結是目前 main 分支；若你繼續使用 PX4 v1.17.0 SITL，最好切到相同版本 tag 閱讀，以免原始碼和實際執行結果不同。
+
+PX4 的 MAVLink Stream 設計就是你之前寫過的 Pub/Sub 概念向外延伸。
+
+[image](https://www.google.com/s2/favicons?domain=https://docs.px4.io\&sz=32)
+
+PX4 Guide (main)
+
++2
+
+
+
+### Stage 5 — Offboard Control
+
+這個階段開始接近無人機系統整合工作。
+
+你可以在 Linux 外部程式透過 MAVLink 控制 PX4 SITL，使無人機按照自己提供的 Setpoint 飛行。
+
+但 Offboard 不只是把位置座標送過去。
+
+你需要理解 NED 座標系、Setpoint 的 type_mask、控制資料頻率、Estimator 狀態和通訊失聯保護。
+
+例如 PX4 v1.17 的 Offboard 模式要求持續收到至少約 2Hz 的有效控制資料，且切換前要先持續提供超過一秒。如果控制資料中斷，會在設定的超時條件下觸發 Offboard-loss Failsafe。單純發送 HEARTBEAT 不能代替 Offboard 所需的 Setpoint。
+
+[image](https://www.google.com/s2/favicons?domain=https://docs.px4.io\&sz=32)
+
+PX4 Guide (v1.17)
+
++1
+
+
+
+參考：[PX4 v1.17 Offboard Mode](https://docs.px4.io/v1.17/en/flight_modes/offboard?utm_source=chatgpt.com)
+
+### Stage 6 — 進階通訊功能
+
+當你完成上述內容，再研究 Parameter Protocol（讀寫 PX4 參數）、Mission Protocol（上傳航點與任務）、Time Synchronization、MAVLink Routing 與 Message Signing。
+
+這些功能對正式產品整合都很重要，尤其是將來使用 Companion Computer、無線通訊或多台無人機時。部署真實設備時，也應特別注意 MAVLink 預設通訊未經身分驗證的風險。
+
+[image](https://www.google.com/s2/favicons?domain=https://mavlink.io\&sz=32)
+
+MAVLink Guide
+
++1
+
+
+
+## 四、我建議你實際做的 MAVLink Labs
+
+延續 PX4-Lite，我建議新增四個獨立練習，各自有可執行的驗收標準。
+
+MAVLink 實作進度表
+
+可自行勾選
+
+1/4
+
+Lab 01 — MAVLink Telemetry Reader
+
+C++ UDP 接收 SITL HEARTBEAT、ATTITUDE，解碼並顯示 sysid / compid / Roll / Pitch / Yaw。驗收：持續更新資料，拔掉連線後能偵測 timeout。
+
+Lab 02 — MAVLink Command Client
+
+發送 Arm / Disarm 命令，檢查 COMMAND_ACK 和實際 Arming 狀態。驗收：命令被拒絕時能顯示原因或結果代碼，timeout 能處理。
+
+Lab 03 — MAVLink Offboard Controller
+
+在 SITL 中持續發送位置 Setpoint，切換 Offboard 並控制移動。驗收：能進入模式、維持位置，停止送出後觸發設定的 Failsafe。
+
+Lab 04 — PX4-Lite MAVLink Bridge
+
+將自己的 PX4-Lite Simulator / Commander 接上 MAVLink。驗收：外部程式可以讀取模擬姿態並向 Commander 發送指令。
+
+開始 Lab 01&#x20;
+
+## 五、哪些東西暫時可以不學？
+
+目前不用花時間自己寫完整的 MAVLink Parser、重新實作 CRC 演算法、研究所有 XML Dialect，或先完成 Mission／Camera／Gimbal／FTP 等協定。
+
+另外，MAVSDK 和 MAVLink 本身應該分開理解：
+
+MAVLink 是通訊協定；MAVSDK 是將連線管理、遙測、命令、Offboard 等功能包裝成更好用 API 的 SDK。實際做產品時可以優先使用 MAVSDK，但你現在若想深入 PX4 Source，值得先做一次底層 C++ MAVLink Client。
+
+## 六、建議的官方學習資料
+
+[image](https://www.google.com/s2/favicons?domain=https://mavlink.io\&sz=32)
+
+[MAVLink Developer Guide](https://mavlink.io/en/?utm_source=chatgpt.com)
+
+優先看 Message、Command Protocol、Packet 與 C library
+
+[image](https://www.google.com/s2/favicons?domain=https://docs.px4.io\&sz=32)
+
+[PX4 MAVLink Messaging](https://docs.px4.io/main/en/mavlink/?utm_source=chatgpt.com)
+
+理解 PX4 的收發架構與 uORB 對應
+
+[image](https://www.google.com/s2/favicons?domain=https://mavsdk.mavlink.io\&sz=32)
+
+[MAVSDK Documentation](https://mavsdk.mavlink.io/main/en/?utm_source=chatgpt.com)
+
+練習完底層通訊再閱讀高階 SDK
+
+我的建議是先完成 Lab 01 和 Lab 02，再回頭讀 PX4 的 MAVLink Receiver。
+
+等你可以親手送出 `COMMAND_LONG`，再看它如何轉成 `vehicle_command`、被 Commander 處理、最後回傳 `COMMAND_ACK`，整個 PX4 的架構就會從原本分散的練習，開始串成完整的飛控系統。

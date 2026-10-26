@@ -1,0 +1,147 @@
+[OUTPUT] 
+Internal ctest changing into directory: D:/mavLink_learn/build
+
+[HANDLER_VERBOSE_OUTPUT] 
+UpdateCTestConfiguration  from :D:/mavLink_learn/build/DartConfiguration.tcl
+
+UpdateCTestConfiguration  from :D:/mavLink_learn/build/DartConfiguration.tcl
+[HANDLER_OUTPUT] 
+Test project D:/mavLink_learn/build
+
+[HANDLER_VERBOSE_OUTPUT] 
+Constructing a list of tests
+
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+[HANDLER_OUTPUT] 
+    Start 1: protocol
+
+[HANDLER_VERBOSE_OUTPUT] 
+
+1: Test command: D:\mavLink_learn\build\protocol_tests.exe
+
+1: Working Directory: D:/mavLink_learn/build
+1: Test timeout computed to be: 10000000
+1: PASS MAVLink 2 magic
+1: PASS partial header emits no message
+1: PASS split frame decoded
+1: PASS two frames in one datagram
+1: PASS bad CRC rejected
+1: PASS resynchronizes after corruption and noise
+1: PASS parser instances do not share partial state
+1: PASS ACK without extension targets accepted
+1: PASS ACK addressed to another client rejected
+1: PASS ACK matching client accepted
+1: PASS ACK from another vehicle rejected
+1: PASS ACK from another component rejected
+1: PASS ACK for another command rejected
+1: PASS position+yaw mask is 2552
+1: PASS Offboard rejected without prestream
+1: PASS unsupported frame rejected
+1: PASS unsupported mask rejected
+1: PASS NaN setpoint rejected
+1: PASS Offboard accepted after prestream
+1: PASS Commander arms
+1: PASS repeated arm is idempotent
+1: PASS NED kinematic response
+1: PASS no premature failsafe
+1: PASS setpoint loss leaves Offboard
+1: PASS arm denial reported
+1: PASS unknown command unsupported
+1: CHECKS=26
+[HANDLER_OUTPUT] 
+1/5 Test #1: protocol .........................
+   Passed    0.38 sec
+[HANDLER_VERBOSE_OUTPUT] 
+test 2
+
+[HANDLER_OUTPUT] 
+    Start 2: signing
+
+[HANDLER_VERBOSE_OUTPUT] 
+
+2: Test command: D:\mavLink_learn\build\signing_tests.exe
+
+2: Working Directory: D:/mavLink_learn/build
+2: Test timeout computed to be: 10000000
+2: PASS outgoing signed flag
+2: PASS valid signature accepted
+2: PASS replayed packet rejected
+2: PASS tampered signature rejected
+2: PASS wrong secret key rejected
+2: PASS unsigned packet rejected by strict policy
+2: SIGNING_CHECKS=6
+[HANDLER_OUTPUT] 
+2/5 Test #2: signing ..........................
+   Passed    0.29 sec
+[HANDLER_VERBOSE_OUTPUT] 
+test 3
+
+[HANDLER_OUTPUT] 
+    Start 3: udp_integration
+
+[HANDLER_VERBOSE_OUTPUT] 
+
+3: Test command: "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\python3.13.exe" "D:/mavLink_learn/tests/integration.py" "D:/mavLink_learn/build"
+
+3: Working Directory: D:/mavLink_learn/build
+3: Test timeout computed to be: 80
+3: PASS Lab01 real UDP heartbeat and attitude
+3: PASS Lab01 heartbeat timeout after bridge exits
+3: PASS Lab02 arm/disarm ACK and observed state
+3: PASS Lab02 deny
+3: PASS Lab02 drop-first
+3: PASS Lab02 silent-ack
+3: PASS Lab02 no-state
+3: PASS Lab02 progress
+3: PASS Lab02 spoof
+3: PASS Lab03 prestream, mode, arm, position, stream loss, disarm
+3: SCENARIOS=10
+[HANDLER_OUTPUT] 
+3/5 Test #3: udp_integration ..................
+   Passed   22.38 sec
+[HANDLER_VERBOSE_OUTPUT] 
+test 4
+
+[HANDLER_OUTPUT] 
+    Start 4: router_integration
+
+[HANDLER_VERBOSE_OUTPUT] 
+
+4: Test command: "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\python3.13.exe" "D:/mavLink_learn/tests/router_integration.py" "D:/mavLink_learn/build"
+
+4: Working Directory: D:/mavLink_learn/build
+4: Test timeout computed to be: 30
+4: ROUTER_PASS two clients, telemetry fan-out, command ACK, state observed by other client
+[HANDLER_OUTPUT] 
+4/5 Test #4: router_integration ...............
+   Passed    4.95 sec
+[HANDLER_VERBOSE_OUTPUT] 
+test 5
+
+[HANDLER_OUTPUT] 
+    Start 5: px4lite_udp_integration
+
+[HANDLER_VERBOSE_OUTPUT] 
+
+5: Test command: "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\python3.13.exe" "D:/mavLink_learn/tests/lite_integration.py" "D:/mavLink_learn/build"
+
+5: Working Directory: D:/mavLink_learn/build
+5: Test timeout computed to be: 180
+5: PASS lab01_telemetry 53769
+5: PASS lab02_command arm
+5: PASS lab02_command disarm
+5: PASS lab05_sitl --lite
+5: PASS lab05_sitl --lite-loss
+5: PX4LITE_SCENARIOS=2
+[HANDLER_OUTPUT] 
+5/5 Test #5: px4lite_udp_integration ..........
+   Passed   24.27 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =  52.31 sec

@@ -1,0 +1,16 @@
+if(PX4LITE_ROOT)
+  if(NOT EXISTS "${PX4LITE_ROOT}/lab07/commander.cpp" OR NOT EXISTS "${PX4LITE_ROOT}/simulator/src/simple_quad_simulator.cpp")
+    message(FATAL_ERROR "PX4LITE_ROOT must contain lab07/commander.cpp and simulator/src/simple_quad_simulator.cpp")
+  endif()
+  add_library(px4lite_backend STATIC "${PX4LITE_ROOT}/lab07/commander.cpp"
+    "${PX4LITE_ROOT}/simulator/src/simple_quad_simulator.cpp")
+  target_include_directories(px4lite_backend SYSTEM PUBLIC "${PX4LITE_ROOT}" "${PX4LITE_ROOT}/simulator/include")
+  add_executable(lab06_px4lite src/main.cpp)
+  target_include_directories(lab06_px4lite PRIVATE include)
+  target_link_libraries(lab06_px4lite PRIVATE lab_support px4lite_backend)
+  if(Python3_FOUND)
+    add_test(NAME px4lite_udp_integration COMMAND "${Python3_EXECUTABLE}"
+      "${CMAKE_CURRENT_SOURCE_DIR}/tests/integration.py" "$<TARGET_FILE_DIR:lab06_px4lite>")
+    set_tests_properties(px4lite_udp_integration PROPERTIES TIMEOUT 180)
+  endif()
+endif()

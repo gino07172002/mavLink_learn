@@ -1,0 +1,767 @@
+INFO  [px4] instance: 7
+
+______  __   __    ___ 
+| ___ \ \ \ / /   /   |
+| |_/ /  \ V /   / /| |
+|  __/   /   \  / /_| |
+| |     / /^\ \ \___  |
+\_|     \/   \/     |_/
+
+px4 starting.
+
+INFO  [px4] startup script: /bin/sh etc/init.d-posix/rcS 7
+env SYS_AUTOSTART: 10040
+INFO  [param] selected parameter default file parameters.bson
+INFO  [param] selected parameter backup file parameters_backup.bson
+  SYS_AUTOCONFIG: curr: 0 -> new: 1
+  MAV_SYS_ID: curr: 1 -> new: 8
+  UXRCE_DDS_KEY: curr: 1 -> new: 8
+  SYS_AUTOSTART: curr: 0 -> new: 10040
+  CAL_ACC0_ID: curr: 0 -> new: 1310988
+  CAL_GYRO0_ID: curr: 0 -> new: 1310988
+  CAL_ACC1_ID: curr: 0 -> new: 1310996
+  CAL_GYRO1_ID: curr: 0 -> new: 1310996
+  CAL_ACC2_ID: curr: 0 -> new: 1311004
+  CAL_GYRO2_ID: curr: 0 -> new: 1311004
+  CAL_MAG0_ID: curr: 0 -> new: 197388
+  CAL_MAG0_PRIO: curr: -1 -> new: 50
+  CAL_MAG1_ID: curr: 0 -> new: 197644
+  CAL_MAG1_PRIO: curr: -1 -> new: 50
+  SENS_BOARD_X_OFF: curr: 0.0000 -> new: 0.0000
+  SENS_DPRES_OFF: curr: 0.0000 -> new: 0.0010
+COM_DL_LOSS_T set to 10
+COM_RC_LOSS_T set to 1
+  COM_RC_LOSS_T: curr: 0.5000 -> new: 1.0000
+COM_OF_LOSS_T set to 1
+COM_DISARM_PRFLT set to 10
+INFO  [dataman] data manager file './dataman' size is 1208528 bytes
+INFO  [init] SIH simulator
+INFO  [simulator_sih] Simulation loop with 250 Hz (4000 us sim time interval)
+INFO  [simulator_sih] Simulation with 1.0x speedup. Loop with (4000 us wall time interval)
+INFO  [lockstep_scheduler] setting initial absolute time to 4000 us
+INFO  [commander] LED: open /dev/led0 failed (22)
+INFO  [vision_target_estimator] VTE for static target init
+INFO  [tone_alarm] home set
+INFO  [uxrce_dds_client] init UDP agent IP:127.0.0.1, port:8888
+INFO  [mavlink] mode: Normal, data rate: 4000000 B/s on udp port 18577 remote port 14550
+INFO  [mavlink] mode: Onboard, data rate: 4000000 B/s on udp port 14587 remote port 14547
+INFO  [mavlink] mode: Onboard, data rate: 4000 B/s on udp port 14287 remote port 14037
+INFO  [mavlink] mode: Gimbal, data rate: 400000 B/s on udp port 13037 remote port 13287
+INFO  [mavlink] mode: Custom, data rate: 400000 B/s on udp port 19457 remote port 19417
+INFO  [logger] logger started (mode=all)
+INFO  [logger] Max log file size: 1024 MiB
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2026-10-26/10_23_32.ulg	
+INFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)
+INFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)
+INFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)
+INFO  [px4] Startup script returned successfully
+pxh> INFO  [logger] Opened full log file: ./log/2026-10-26/10_23_32.ulg
+[2K
+pxh> m[2K
+pxh> ma[2K
+pxh> mav[2K
+pxh> mavl[2K
+pxh> mavli[2K
+pxh> mavlin[2K
+pxh> mavlink[2K
+pxh> mavlink [2K
+pxh> mavlink s[2K
+pxh> mavlink st[2K
+pxh> mavlink sto[2K
+pxh> mavlink stop[2K
+pxh> mavlink stop-[2K
+pxh> mavlink stop-a[2K
+pxh> mavlink stop-al[2K
+pxh> mavlink stop-all
+INFO  [mavlink] waiting for instances to stop
+.INFO  [mavlink] exiting channel 4
+INFO  [mavlink] exiting channel 3
+INFO  [mavlink] exiting channel 0
+INFO  [mavlink] exiting channel 2
+.INFO  [mavlink] exiting channel 1
+INFO  [mavlink] all instances stopped
+pxh> [2K
+pxh> p[2K
+pxh> pa[2K
+pxh> par[2K
+pxh> para[2K
+pxh> param[2K
+pxh> param [2K
+pxh> param s[2K
+pxh> param se[2K
+pxh> param set[2K
+pxh> param set [2K
+pxh> param set C[2K
+pxh> param set CO[2K
+pxh> param set COM[2K
+pxh> param set COM_[2K
+pxh> param set COM_R[2K
+pxh> param set COM_RC[2K
+pxh> param set COM_RC_[2K
+pxh> param set COM_RC_I[2K
+pxh> param set COM_RC_IN[2K
+pxh> param set COM_RC_IN_[2K
+pxh> param set COM_RC_IN_M[2K
+pxh> param set COM_RC_IN_MO[2K
+pxh> param set COM_RC_IN_MOD[2K
+pxh> param set COM_RC_IN_MODE[2K
+pxh> param set COM_RC_IN_MODE [2K
+pxh> param set COM_RC_IN_MODE 4
+  COM_RC_IN_MODE: curr: 1 -> new: 4
+pxh> [2K
+pxh> p[2K
+pxh> pa[2K
+pxh> par[2K
+pxh> para[2K
+pxh> param[2K
+pxh> param [2K
+pxh> param s[2K
+pxh> param se[2K
+pxh> param set[2K
+pxh> param set [2K
+pxh> param set C[2K
+pxh> param set CO[2K
+pxh> param set COM[2K
+pxh> param set COM_[2K
+pxh> param set COM_R[2K
+pxh> param set COM_RC[2K
+pxh> param set COM_RCL[2K
+pxh> param set COM_RCL_[2K
+pxh> param set COM_RCL_E[2K
+pxh> param set COM_RCL_EX[2K
+pxh> param set COM_RCL_EXC[2K
+pxh> param set COM_RCL_EXCE[2K
+pxh> param set COM_RCL_EXCEP[2K
+pxh> param set COM_RCL_EXCEPT[2K
+pxh> param set COM_RCL_EXCEPT [2K
+pxh> param set COM_RCL_EXCEPT 4
+  COM_RCL_EXCEPT: curr: 0 -> new: 4
+pxh> [2K
+pxh> p[2K
+pxh> pa[2K
+pxh> par[2K
+pxh> para[2K
+pxh> param[2K
+pxh> param [2K
+pxh> param s[2K
+pxh> param se[2K
+pxh> param set[2K
+pxh> param set [2K
+pxh> param set C[2K
+pxh> param set CO[2K
+pxh> param set COM[2K
+pxh> param set COM_[2K
+pxh> param set COM_O[2K
+pxh> param set COM_OF[2K
+pxh> param set COM_OF_[2K
+pxh> param set COM_OF_L[2K
+pxh> param set COM_OF_LO[2K
+pxh> param set COM_OF_LOS[2K
+pxh> param set COM_OF_LOSS[2K
+pxh> param set COM_OF_LOSS_[2K
+pxh> param set COM_OF_LOSS_T[2K
+pxh> param set COM_OF_LOSS_T [2K
+pxh> param set COM_OF_LOSS_T 0[2K
+pxh> param set COM_OF_LOSS_T 0.[2K
+pxh> param set COM_OF_LOSS_T 0.5
+  COM_OF_LOSS_T: curr: 1.0000 -> new: 0.5000
+pxh> [2K
+pxh> p[2K
+pxh> pa[2K
+pxh> par[2K
+pxh> para[2K
+pxh> param[2K
+pxh> param [2K
+pxh> param s[2K
+pxh> param se[2K
+pxh> param set[2K
+pxh> param set [2K
+pxh> param set C[2K
+pxh> param set CO[2K
+pxh> param set COM[2K
+pxh> param set COM_[2K
+pxh> param set COM_O[2K
+pxh> param set COM_OB[2K
+pxh> param set COM_OBL[2K
+pxh> param set COM_OBL_[2K
+pxh> param set COM_OBL_R[2K
+pxh> param set COM_OBL_RC[2K
+pxh> param set COM_OBL_RC_[2K
+pxh> param set COM_OBL_RC_A[2K
+pxh> param set COM_OBL_RC_AC[2K
+pxh> param set COM_OBL_RC_ACT[2K
+pxh> param set COM_OBL_RC_ACT [2K
+pxh> param set COM_OBL_RC_ACT 4
+  COM_OBL_RC_ACT: curr: 0 -> new: 4
+pxh> [2K
+pxh> m[2K
+pxh> ma[2K
+pxh> mav[2K
+pxh> mavl[2K
+pxh> mavli[2K
+pxh> mavlin[2K
+pxh> mavlink[2K
+pxh> mavlink [2K
+pxh> mavlink s[2K
+pxh> mavlink st[2K
+pxh> mavlink sta[2K
+pxh> mavlink star[2K
+pxh> mavlink start[2K
+pxh> mavlink start [2K
+pxh> mavlink start -[2K
+pxh> mavlink start -u[2K
+pxh> mavlink start -u [2K
+pxh> mavlink start -u 1[2K
+pxh> mavlink start -u 14[2K
+pxh> mavlink start -u 146[2K
+pxh> mavlink start -u 1466[2K
+pxh> mavlink start -u 14660[2K
+pxh> mavlink start -u 14660 [2K
+pxh> mavlink start -u 14660 -[2K
+pxh> mavlink start -u 14660 -o[2K
+pxh> mavlink start -u 14660 -o [2K
+pxh> mavlink start -u 14660 -o 1[2K
+pxh> mavlink start -u 14660 -o 14[2K
+pxh> mavlink start -u 14660 -o 146[2K
+pxh> mavlink start -u 14660 -o 1465[2K
+pxh> mavlink start -u 14660 -o 14650[2K
+pxh> mavlink start -u 14660 -o 14650 [2K
+pxh> mavlink start -u 14660 -o 14650 -[2K
+pxh> mavlink start -u 14660 -o 14650 -t[2K
+pxh> mavlink start -u 14660 -o 14650 -t [2K
+pxh> mavlink start -u 14660 -o 14650 -t 1[2K
+pxh> mavlink start -u 14660 -o 14650 -t 12[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 [2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m [2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m o[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m on[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onb[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onbo[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onboa[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onboar[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onboard[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onboard [2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onboard -[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onboard -r[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onboard -r [2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onboard -r 2[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onboard -r 20[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onboard -r 200[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onboard -r 2000[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onboard -r 20000[2K
+pxh> mavlink start -u 14660 -o 14650 -t 127.0.0.1 -m onboard -r 200000
+INFO  [mavlink] mode: Onboard, data rate: 200000 B/s on udp port 14660 remote port 14650
+pxh> [2K
+pxh> m[2K
+pxh> ma[2K
+pxh> mav[2K
+pxh> mavl[2K
+pxh> mavli[2K
+pxh> mavlin[2K
+pxh> mavlink[2K
+pxh> mavlink [2K
+pxh> mavlink s[2K
+pxh> mavlink st[2K
+pxh> mavlink str[2K
+pxh> mavlink stre[2K
+pxh> mavlink strea[2K
+pxh> mavlink stream[2K
+pxh> mavlink stream [2K
+pxh> mavlink stream -[2K
+pxh> mavlink stream -u[2K
+pxh> mavlink stream -u [2K
+pxh> mavlink stream -u 1[2K
+pxh> mavlink stream -u 14[2K
+pxh> mavlink stream -u 146[2K
+pxh> mavlink stream -u 1466[2K
+pxh> mavlink stream -u 14660[2K
+pxh> mavlink stream -u 14660 [2K
+pxh> mavlink stream -u 14660 -[2K
+pxh> mavlink stream -u 14660 -s[2K
+pxh> mavlink stream -u 14660 -s [2K
+pxh> mavlink stream -u 14660 -s A[2K
+pxh> mavlink stream -u 14660 -s AT[2K
+pxh> mavlink stream -u 14660 -s ATT[2K
+pxh> mavlink stream -u 14660 -s ATTI[2K
+pxh> mavlink stream -u 14660 -s ATTIT[2K
+pxh> mavlink stream -u 14660 -s ATTITU[2K
+pxh> mavlink stream -u 14660 -s ATTITUD[2K
+pxh> mavlink stream -u 14660 -s ATTITUDE[2K
+pxh> mavlink stream -u 14660 -s ATTITUDE [2K
+pxh> mavlink stream -u 14660 -s ATTITUDE -[2K
+pxh> mavlink stream -u 14660 -s ATTITUDE -r[2K
+pxh> mavlink stream -u 14660 -s ATTITUDE -r [2K
+pxh> mavlink stream -u 14660 -s ATTITUDE -r 2[2K
+pxh> mavlink stream -u 14660 -s ATTITUDE -r 20
+pxh> [2K
+pxh> m[2K
+pxh> ma[2K
+pxh> mav[2K
+pxh> mavl[2K
+pxh> mavli[2K
+pxh> mavlin[2K
+pxh> mavlink[2K
+pxh> mavlink [2K
+pxh> mavlink s[2K
+pxh> mavlink st[2K
+pxh> mavlink str[2K
+pxh> mavlink stre[2K
+pxh> mavlink strea[2K
+pxh> mavlink stream[2K
+pxh> mavlink stream [2K
+pxh> mavlink stream -[2K
+pxh> mavlink stream -u[2K
+pxh> mavlink stream -u [2K
+pxh> mavlink stream -u 1[2K
+pxh> mavlink stream -u 14[2K
+pxh> mavlink stream -u 146[2K
+pxh> mavlink stream -u 1466[2K
+pxh> mavlink stream -u 14660[2K
+pxh> mavlink stream -u 14660 [2K
+pxh> mavlink stream -u 14660 -[2K
+pxh> mavlink stream -u 14660 -s[2K
+pxh> mavlink stream -u 14660 -s [2K
+pxh> mavlink stream -u 14660 -s L[2K
+pxh> mavlink stream -u 14660 -s LO[2K
+pxh> mavlink stream -u 14660 -s LOC[2K
+pxh> mavlink stream -u 14660 -s LOCA[2K
+pxh> mavlink stream -u 14660 -s LOCAL[2K
+pxh> mavlink stream -u 14660 -s LOCAL_[2K
+pxh> mavlink stream -u 14660 -s LOCAL_P[2K
+pxh> mavlink stream -u 14660 -s LOCAL_PO[2K
+pxh> mavlink stream -u 14660 -s LOCAL_POS[2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSI[2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSIT[2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSITI[2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSITIO[2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSITION[2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSITION_[2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSITION_N[2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSITION_NE[2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSITION_NED[2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSITION_NED [2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSITION_NED -[2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSITION_NED -r[2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSITION_NED -r [2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSITION_NED -r 2[2K
+pxh> mavlink stream -u 14660 -s LOCAL_POSITION_NED -r 20
+pxh> [2K
+pxh> m[2K
+pxh> ma[2K
+pxh> mav[2K
+pxh> mavl[2K
+pxh> mavli[2K
+pxh> mavlin[2K
+pxh> mavlink[2K
+pxh> mavlink [2K
+pxh> mavlink s[2K
+pxh> mavlink st[2K
+pxh> mavlink str[2K
+pxh> mavlink stre[2K
+pxh> mavlink strea[2K
+pxh> mavlink stream[2K
+pxh> mavlink stream [2K
+pxh> mavlink stream -[2K
+pxh> mavlink stream -u[2K
+pxh> mavlink stream -u [2K
+pxh> mavlink stream -u 1[2K
+pxh> mavlink stream -u 14[2K
+pxh> mavlink stream -u 146[2K
+pxh> mavlink stream -u 1466[2K
+pxh> mavlink stream -u 14660[2K
+pxh> mavlink stream -u 14660 [2K
+pxh> mavlink stream -u 14660 -[2K
+pxh> mavlink stream -u 14660 -s[2K
+pxh> mavlink stream -u 14660 -s [2K
+pxh> mavlink stream -u 14660 -s E[2K
+pxh> mavlink stream -u 14660 -s EX[2K
+pxh> mavlink stream -u 14660 -s EXT[2K
+pxh> mavlink stream -u 14660 -s EXTE[2K
+pxh> mavlink stream -u 14660 -s EXTEN[2K
+pxh> mavlink stream -u 14660 -s EXTEND[2K
+pxh> mavlink stream -u 14660 -s EXTENDE[2K
+pxh> mavlink stream -u 14660 -s EXTENDED[2K
+pxh> mavlink stream -u 14660 -s EXTENDED_[2K
+pxh> mavlink stream -u 14660 -s EXTENDED_S[2K
+pxh> mavlink stream -u 14660 -s EXTENDED_SY[2K
+pxh> mavlink stream -u 14660 -s EXTENDED_SYS[2K
+pxh> mavlink stream -u 14660 -s EXTENDED_SYS_[2K
+pxh> mavlink stream -u 14660 -s EXTENDED_SYS_S[2K
+pxh> mavlink stream -u 14660 -s EXTENDED_SYS_ST[2K
+pxh> mavlink stream -u 14660 -s EXTENDED_SYS_STA[2K
+pxh> mavlink stream -u 14660 -s EXTENDED_SYS_STAT[2K
+pxh> mavlink stream -u 14660 -s EXTENDED_SYS_STATE[2K
+pxh> mavlink stream -u 14660 -s EXTENDED_SYS_STATE [2K
+pxh> mavlink stream -u 14660 -s EXTENDED_SYS_STATE -[2K
+pxh> mavlink stream -u 14660 -s EXTENDED_SYS_STATE -r[2K
+pxh> mavlink stream -u 14660 -s EXTENDED_SYS_STATE -r [2K
+pxh> mavlink stream -u 14660 -s EXTENDED_SYS_STATE -r 1[2K
+pxh> mavlink stream -u 14660 -s EXTENDED_SYS_STATE -r 10
+pxh> [2K
+pxh> v[2K
+pxh> ve[2K
+pxh> ver[2K
+pxh> ver [2K
+pxh> ver a[2K
+pxh> ver al[2K
+pxh> ver all
+HW arch: PX4_SITL
+PX4 git-hash: 6db88017b8120d6f97fa84541d5765ef99ef7392
+PX4 version: 1.18.0 80 (17956992)
+PX4 git-branch: main
+OS: Linux
+OS version: Release 6.18.54 (101857023)
+Build datetime: Aug 22 2026 20:21:40
+Build uri: localhost
+Build variant: default
+Toolchain: GNU GCC, 11.4.0
+PX4GUID: 1006554d49534954414c44494e4f30303030
+UNKNOWN MCU
+pxh> [2K
+pxh> p[2K
+pxh> pa[2K
+pxh> par[2K
+pxh> para[2K
+pxh> param[2K
+pxh> param [2K
+pxh> param s[2K
+pxh> param sh[2K
+pxh> param sho[2K
+pxh> param show[2K
+pxh> param show [2K
+pxh> param show C[2K
+pxh> param show CO[2K
+pxh> param show COM[2K
+pxh> param show COM_[2K
+pxh> param show COM_R[2K
+pxh> param show COM_RC[2K
+pxh> param show COM_RC_[2K
+pxh> param show COM_RC_I[2K
+pxh> param show COM_RC_IN[2K
+pxh> param show COM_RC_IN_[2K
+pxh> param show COM_RC_IN_M[2K
+pxh> param show COM_RC_IN_MO[2K
+pxh> param show COM_RC_IN_MOD[2K
+pxh> param show COM_RC_IN_MODE
+Symbols: x = used, + = saved, * = unsaved, l = locked
+x *   COM_RC_IN_MODE [314,529] : 4
+
+ 995/1913 parameters used.
+pxh> [2K
+pxh> p[2K
+pxh> pa[2K
+pxh> par[2K
+pxh> para[2K
+pxh> param[2K
+pxh> param [2K
+pxh> param s[2K
+pxh> param sh[2K
+pxh> param sho[2K
+pxh> param show[2K
+pxh> param show [2K
+pxh> param show C[2K
+pxh> param show CO[2K
+pxh> param show COM[2K
+pxh> param show COM_[2K
+pxh> param show COM_R[2K
+pxh> param show COM_RC[2K
+pxh> param show COM_RCL[2K
+pxh> param show COM_RCL_[2K
+pxh> param show COM_RCL_E[2K
+pxh> param show COM_RCL_EX[2K
+pxh> param show COM_RCL_EXC[2K
+pxh> param show COM_RCL_EXCE[2K
+pxh> param show COM_RCL_EXCEP[2K
+pxh> param show COM_RCL_EXCEPT
+Symbols: x = used, + = saved, * = unsaved, l = locked
+x *   COM_RCL_EXCEPT [313,528] : 4
+
+ 995/1913 parameters used.
+pxh> [2K
+pxh> p[2K
+pxh> pa[2K
+pxh> par[2K
+pxh> para[2K
+pxh> param[2K
+pxh> param [2K
+pxh> param s[2K
+pxh> param sh[2K
+pxh> param sho[2K
+pxh> param show[2K
+pxh> param show [2K
+pxh> param show C[2K
+pxh> param show CO[2K
+pxh> param show COM[2K
+pxh> param show COM_[2K
+pxh> param show COM_O[2K
+pxh> param show COM_OF[2K
+pxh> param show COM_OF_[2K
+pxh> param show COM_OF_L[2K
+pxh> param show COM_OF_LO[2K
+pxh> param show COM_OF_LOS[2K
+pxh> param show COM_OF_LOSS[2K
+pxh> param show COM_OF_LOSS_[2K
+pxh> param show COM_OF_LOSS_T
+Symbols: x = used, + = saved, * = unsaved, l = locked
+x *   COM_OF_LOSS_T [303,518] : 0.5000
+
+ 995/1913 parameters used.
+pxh> [2K
+pxh> p[2K
+pxh> pa[2K
+pxh> par[2K
+pxh> para[2K
+pxh> param[2K
+pxh> param [2K
+pxh> param s[2K
+pxh> param sh[2K
+pxh> param sho[2K
+pxh> param show[2K
+pxh> param show [2K
+pxh> param show C[2K
+pxh> param show CO[2K
+pxh> param show COM[2K
+pxh> param show COM_[2K
+pxh> param show COM_O[2K
+pxh> param show COM_OB[2K
+pxh> param show COM_OBL[2K
+pxh> param show COM_OBL_[2K
+pxh> param show COM_OBL_R[2K
+pxh> param show COM_OBL_RC[2K
+pxh> param show COM_OBL_RC_[2K
+pxh> param show COM_OBL_RC_A[2K
+pxh> param show COM_OBL_RC_AC[2K
+pxh> param show COM_OBL_RC_ACT
+Symbols: x = used, + = saved, * = unsaved, l = locked
+x *   COM_OBL_RC_ACT [302,517] : 4
+
+ 995/1913 parameters used.
+pxh> [2K
+pxh> m[2K
+pxh> ma[2K
+pxh> mav[2K
+pxh> mavl[2K
+pxh> mavli[2K
+pxh> mavlin[2K
+pxh> mavlink[2K
+pxh> mavlink [2K
+pxh> mavlink s[2K
+pxh> mavlink st[2K
+pxh> mavlink sta[2K
+pxh> mavlink stat[2K
+pxh> mavlink statu[2K
+pxh> mavlink status
+
+instance #0:
+	mavlink chan: #0
+	type:		GENERIC LINK OR RADIO
+	flow control: OFF
+	rates:
+	  tx: 0.0 B/s
+	  txerr: 0.0 B/s
+	  tx rate mult: 1.000
+	  tx rate max: 200000 B/s
+	  rx: 0.0 B/s
+	  rx loss: 0.0%
+	Received Messages:
+	  sysid:245, compid:191, Total: 1 (lost: 0)
+	FTP enabled: NO, TX enabled: YES
+	mode: Onboard
+	Forwarding: Off
+	MAVLink version: 2
+	transport protocol: UDP (14660, remote port: 14650)
+	Broadcast enabled: NO
+	partner IP: 127.0.0.1
+pxh> WARN  [health_and_arming_checks] Preflight Fail: no heading reference
+INFO  [commander] [32mReady for takeoff![0m
+INFO  [tone_alarm] notify positive
+[2K
+pxh> c[2K
+pxh> co[2K
+pxh> com[2K
+pxh> comm[2K
+pxh> comma[2K
+pxh> comman[2K
+pxh> command[2K
+pxh> commande[2K
+pxh> commander[2K
+pxh> commander [2K
+pxh> commander s[2K
+pxh> commander st[2K
+pxh> commander sta[2K
+pxh> commander stat[2K
+pxh> commander statu[2K
+pxh> commander status
+INFO  [commander] Disarmed
+INFO  [commander] prearm safety: Off
+INFO  [commander] navigation mode: Hold
+INFO  [commander] user intended navigation mode: Hold
+INFO  [commander] in failsafe: no
+commander: cycle: 1059 events, 0us elapsed, 0.00us avg, min 0us max 0us 0.000us rms
+commander: preflight check: 119 events, 0us elapsed, 0.00us avg, min 0us max 0us 0.000us rms
+pxh> [2K
+pxh> l[2K
+pxh> li[2K
+pxh> lis[2K
+pxh> list[2K
+pxh> liste[2K
+pxh> listen[2K
+pxh> listene[2K
+pxh> listener[2K
+pxh> listener [2K
+pxh> listener v[2K
+pxh> listener ve[2K
+pxh> listener veh[2K
+pxh> listener vehi[2K
+pxh> listener vehic[2K
+pxh> listener vehicl[2K
+pxh> listener vehicle[2K
+pxh> listener vehicle_[2K
+pxh> listener vehicle_l[2K
+pxh> listener vehicle_lo[2K
+pxh> listener vehicle_loc[2K
+pxh> listener vehicle_loca[2K
+pxh> listener vehicle_local[2K
+pxh> listener vehicle_local_[2K
+pxh> listener vehicle_local_p[2K
+pxh> listener vehicle_local_po[2K
+pxh> listener vehicle_local_pos[2K
+pxh> listener vehicle_local_posi[2K
+pxh> listener vehicle_local_posit[2K
+pxh> listener vehicle_local_positi[2K
+pxh> listener vehicle_local_positio[2K
+pxh> listener vehicle_local_position[2K
+pxh> listener vehicle_local_position [2K
+pxh> listener vehicle_local_position -[2K
+pxh> listener vehicle_local_position -n[2K
+pxh> listener vehicle_local_position -n [2K
+pxh> listener vehicle_local_position -n 1
+
+TOPIC: vehicle_local_position
+ vehicle_local_position
+    timestamp: 13560000 (0.000000 seconds ago)
+    timestamp_sample: 13560000 (0 us before timestamp)
+    ref_timestamp: 648000
+    ref_lat: 47.397743
+    ref_lon: 8.545595
+    x: -0.01287
+    y: -0.03924
+    z: 0.04745
+    delta_xy: [0.00000, 0.00000]
+    delta_z: -489.43442
+    vx: 0.00181
+    vy: -0.00814
+    vz: -0.00208
+    z_deriv: 0.00023
+    delta_vxy: [0.00525, 0.00184]
+    delta_vz: -0.00057
+    ax: 0.06612
+    ay: 0.04084
+    az: 0.02312
+    heading: 0.01500
+    heading_var: 0.03462
+    unaided_heading: 0.00131
+    delta_heading: 0.02914
+    tilt_var: 0.00079
+    ref_alt: 489.43088
+    dist_bottom: 0.01163
+    dist_bottom_var: 0.00058
+    delta_dist_bottom: -489.43442
+    eph: 0.29016
+    epv: 0.06691
+    evh: 0.14906
+    evv: 0.03343
+    vxy_max: inf
+    vz_max: inf
+    hagl_min: inf
+    hagl_max_z: inf
+    hagl_max_xy: inf
+    xy_valid: True
+    z_valid: True
+    v_xy_valid: True
+    v_z_valid: True
+    xy_reset_counter: 4
+    z_reset_counter: 2
+    vxy_reset_counter: 3
+    vz_reset_counter: 1
+    heading_reset_counter: 1
+    heading_good_for_control: False
+    xy_global: True
+    z_global: True
+    dist_bottom_valid: True
+    dist_bottom_reset_counter: 2
+    dist_bottom_sensor_bitfield: 1
+    dead_reckoning: False
+pxh> [2K
+pxh> l[2K
+pxh> li[2K
+pxh> lis[2K
+pxh> list[2K
+pxh> liste[2K
+pxh> listen[2K
+pxh> listene[2K
+pxh> listener[2K
+pxh> listener [2K
+pxh> listener v[2K
+pxh> listener ve[2K
+pxh> listener veh[2K
+pxh> listener vehi[2K
+pxh> listener vehic[2K
+pxh> listener vehicl[2K
+pxh> listener vehicle[2K
+pxh> listener vehicle_[2K
+pxh> listener vehicle_l[2K
+pxh> listener vehicle_la[2K
+pxh> listener vehicle_lan[2K
+pxh> listener vehicle_land[2K
+pxh> listener vehicle_land_[2K
+pxh> listener vehicle_land_d[2K
+pxh> listener vehicle_land_de[2K
+pxh> listener vehicle_land_det[2K
+pxh> listener vehicle_land_dete[2K
+pxh> listener vehicle_land_detec[2K
+pxh> listener vehicle_land_detect[2K
+pxh> listener vehicle_land_detecte[2K
+pxh> listener vehicle_land_detected[2K
+pxh> listener vehicle_land_detected [2K
+pxh> listener vehicle_land_detected -[2K
+pxh> listener vehicle_land_detected -n[2K
+pxh> listener vehicle_land_detected -n [2K
+pxh> listener vehicle_land_detected -n 1
+
+TOPIC: vehicle_land_detected
+ vehicle_land_detected
+    timestamp: 13184000 (0.380000 seconds ago)
+    freefall: False
+    ground_contact: True
+    maybe_landed: True
+    landed: True
+    in_ground_effect: True
+    in_descend: True
+    has_low_throttle: True
+    vertical_movement: False
+    horizontal_movement: False
+    rotational_movement: False
+    close_to_ground_or_skipped_check: True
+    at_rest: True
+
+pxh> [2K
+pxh> s[2K
+pxh> sh[2K
+pxh> shu[2K
+pxh> shut[2K
+pxh> shutd[2K
+pxh> shutdo[2K
+pxh> shutdow[2K
+pxh> shutdown
+Exiting NOW.

@@ -1,0 +1,31 @@
+name: Build and test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  portable-labs:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Check course links and reference hashes
+        run: python scripts/check_materials.py
+      - name: Configure portable Labs
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+      - name: Build
+        run: cmake --build build --config Debug --parallel 1
+      - name: Test
+        run: ctest --test-dir build -C Debug --output-on-failure -V

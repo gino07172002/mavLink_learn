@@ -1,0 +1,113 @@
+Internal ctest changing into directory: /mnt/d/mavLink_learn/build-linux
+UpdateCTestConfiguration  from :/mnt/d/mavLink_learn/build-linux/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/mnt/d/mavLink_learn/build-linux/DartConfiguration.tcl
+Test project /mnt/d/mavLink_learn/build-linux
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: reset_lab_utility
+
+1: Test command: /usr/bin/python3.10 "/mnt/d/mavLink_learn/tests/test_reset_lab.py"
+1: Test timeout computed to be: 10000000
+1: test_corrupt_reference_refuses_before_overwrite (__main__.ResetLabTests) ... ok
+1: test_dry_run_changes_nothing (__main__.ResetLabTests) ... ok
+1: test_list_handles_unicode_title (__main__.ResetLabTests) ... ok
+1: test_path_escape_refuses (__main__.ResetLabTests) ... ok
+1: test_restore_backs_up_changes_and_preserves_notes (__main__.ResetLabTests) ... ok
+1: test_unknown_lab_refuses (__main__.ResetLabTests) ... ok
+1: 
+1: ----------------------------------------------------------------------
+1: Ran 6 tests in 0.429s
+1: 
+1: OK
+1/6 Test #1: reset_lab_utility ................   Passed    1.30 sec
+test 2
+    Start 2: udp_integration
+
+2: Test command: /usr/bin/python3.10 "/mnt/d/mavLink_learn/tests/integration.py" "/mnt/d/mavLink_learn/build-linux"
+2: Test timeout computed to be: 80
+2: PASS Lab01 real UDP heartbeat and attitude
+2: PASS Lab01 heartbeat timeout after bridge exits
+2: PASS Lab02 arm/disarm ACK and observed state
+2: PASS Lab02 deny
+2: PASS Lab02 drop-first
+2: PASS Lab02 silent-ack
+2: PASS Lab02 no-state
+2: PASS Lab02 progress
+2: PASS Lab02 spoof
+2: PASS Lab03 prestream, mode, arm, position, stream loss, disarm
+2: SCENARIOS=10
+2/6 Test #2: udp_integration ..................   Passed   20.96 sec
+test 3
+    Start 3: protocol
+
+3: Test command: /mnt/d/mavLink_learn/build-linux/protocol_tests
+3: Test timeout computed to be: 10000000
+3: PASS MAVLink 2 magic
+3: PASS partial header emits no message
+3: PASS split frame decoded
+3: PASS two frames in one datagram
+3: PASS bad CRC rejected
+3: PASS resynchronizes after corruption and noise
+3: PASS parser instances do not share partial state
+3: PASS ACK without extension targets accepted
+3: PASS ACK addressed to another client rejected
+3: PASS ACK matching client accepted
+3: PASS ACK from another vehicle rejected
+3: PASS ACK from another component rejected
+3: PASS ACK for another command rejected
+3: PASS position+yaw mask is 2552
+3: PASS Offboard rejected without prestream
+3: PASS unsupported frame rejected
+3: PASS unsupported mask rejected
+3: PASS NaN setpoint rejected
+3: PASS Offboard accepted after prestream
+3: PASS Commander arms
+3: PASS repeated arm is idempotent
+3: PASS NED kinematic response
+3: PASS no premature failsafe
+3: PASS setpoint loss leaves Offboard
+3: PASS arm denial reported
+3: PASS unknown command unsupported
+3: CHECKS=26
+3/6 Test #3: protocol .........................   Passed    0.03 sec
+test 4
+    Start 4: px4lite_udp_integration
+
+4: Test command: /usr/bin/python3.10 "/mnt/d/mavLink_learn/labs/lab06_px4lite/tests/integration.py" "/mnt/d/mavLink_learn/build-linux"
+4: Test timeout computed to be: 180
+4: PASS lab01_telemetry 43252
+4: PASS lab02_command arm
+4: PASS lab02_command disarm
+4: PASS lab05_sitl --lite
+4: PASS lab05_sitl --lite-loss
+4: PX4LITE_SCENARIOS=2
+4/6 Test #4: px4lite_udp_integration ..........   Passed   23.78 sec
+test 5
+    Start 5: router_integration
+
+5: Test command: /usr/bin/python3.10 "/mnt/d/mavLink_learn/labs/lab08_router/tests/integration.py" "/mnt/d/mavLink_learn/build-linux"
+5: Test timeout computed to be: 30
+5: ROUTER_PASS two clients, telemetry fan-out, command ACK, state observed by other client
+5/6 Test #5: router_integration ...............   Passed    4.43 sec
+test 6
+    Start 6: signing
+
+6: Test command: /mnt/d/mavLink_learn/build-linux/signing_tests
+6: Test timeout computed to be: 10000000
+6: PASS outgoing signed flag
+6: PASS valid signature accepted
+6: PASS replayed packet rejected
+6: PASS tampered signature rejected
+6: PASS wrong secret key rejected
+6: PASS unsigned packet rejected by strict policy
+6: SIGNING_CHECKS=6
+6/6 Test #6: signing ..........................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 6
+
+Total Test time (real) =  50.71 sec

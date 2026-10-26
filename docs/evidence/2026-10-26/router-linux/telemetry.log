@@ -1,0 +1,96 @@
+HEARTBEAT sys=1 comp=1 armed=0
+ATTITUDE deg roll=1.52544 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=1.84084 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=2.11427 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=2.3818 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=2.6428 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=2.89778 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=3.14463 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=3.38356 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=3.61404 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=3.83566 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=4.04676 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=4.24752 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=4.4374 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=4.6159 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=4.78228 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=4.93689 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.08278 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.21065 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.32494 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.42534 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=5.51193 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.58417 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.6421 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.68548 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.71417 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=5.72813 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.72729 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.71171 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.68131 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.63631 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=5.57671 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.50277 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.41455 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.31259 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=5.19654 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=5.06724 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=4.9211 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=4.76586 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=4.59819 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=4.41844 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=4.22721 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=4.02527 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=3.81322 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=3.59115 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=3.36002 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=3.11976 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=2.87115 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=2.6157 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=2.35313 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=2.08448 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=1.81019 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=1.53176 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=1.24986 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=0.964858 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=0.67746 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=0.387699 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=0.0833658 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-0.207832 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-0.498103 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-0.787779 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=-1.07538 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-1.36112 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-1.64311 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-1.92037 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-2.19269 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=-2.45849 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-2.71847 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-2.97157 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-3.21661 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-3.45349 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=-3.68173 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-3.9 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-4.1082 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-4.30569 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-4.49236 pitch=2.86479 yaw=11.4592
+HEARTBEAT sys=1 comp=1 armed=1
+ATTITUDE deg roll=-4.66693 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-4.83474 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-4.98442 pitch=2.86479 yaw=11.4592
+ATTITUDE deg roll=-5.12126 pitch=2.86479 yaw=11.4592
+SUMMARY attitudes=79

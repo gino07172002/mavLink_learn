@@ -1,0 +1,7 @@
+# Reference manifests hash exact bytes; keep text identical across checkout platforms.
+* text=auto eol=lf
+*.log -text -whitespace
+*.ulg binary
+*.png binary
+*.jpg binary
+*.pdf binary

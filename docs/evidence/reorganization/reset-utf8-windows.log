@@ -1,0 +1,53 @@
+[OUTPUT] 
+Internal ctest changing into directory: D:/mavLink_learn/build
+
+[HANDLER_VERBOSE_OUTPUT] 
+UpdateCTestConfiguration  from :D:/mavLink_learn/build/DartConfiguration.tcl
+
+UpdateCTestConfiguration  from :D:/mavLink_learn/build/DartConfiguration.tcl
+[HANDLER_OUTPUT] 
+Test project D:/mavLink_learn/build
+
+[HANDLER_VERBOSE_OUTPUT] 
+Constructing a list of tests
+
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+[HANDLER_OUTPUT] 
+    Start 1: reset_lab_utility
+
+[HANDLER_VERBOSE_OUTPUT] 
+
+1: Test command: "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\python3.13.exe" "D:/mavLink_learn/tests/test_reset_lab.py"
+
+1: Working Directory: D:/mavLink_learn/build
+1: Test timeout computed to be: 10000000
+1: test_corrupt_reference_refuses_before_overwrite (__main__.ResetLabTests.test_corrupt_reference_refuses_before_overwrite) ... ok
+1: test_dry_run_changes_nothing (__main__.ResetLabTests.test_dry_run_changes_nothing) ... ok
+1: test_list_handles_unicode_title (__main__.ResetLabTests.test_list_handles_unicode_title) ... ok
+1: test_path_escape_refuses (__main__.ResetLabTests.test_path_escape_refuses) ... ok
+1: test_restore_backs_up_changes_and_preserves_notes (__main__.ResetLabTests.test_restore_backs_up_changes_and_preserves_notes) ... ok
+1: test_unknown_lab_refuses (__main__.ResetLabTests.test_unknown_lab_refuses) ... ok
+1: 
+1: ----------------------------------------------------------------------
+1: Ran 6 tests in 1.015s
+1: 
+1: OK
+[HANDLER_OUTPUT] 
+1/1 Test #1: reset_lab_utility ................
+   Passed    1.42 sec
+[HANDLER_VERBOSE_OUTPUT] 
+
+The following tests passed:
+
+	reset_lab_utility
+[HANDLER_OUTPUT] 
+
+100% tests passed, 0 tests failed out of 1
+
+
+Total Test time (real) =   1.44 sec
